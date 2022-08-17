@@ -1,0 +1,18 @@
+<p>listado de héroes Starwars</p>
+
+<div *ngIf="personajeBorrado;else noBorrado">
+    <h3>Personaje borrado: <small>{{personajeBorrado}}</small></h3>    
+</div>
+
+<!-- # significa referencia local-->
+<ng-template #noBorrado>
+    <h3>No ha borrado personajes!!!</h3>
+</ng-template>
+
+
+<button (click)="borrarPersonaje()">Borrar</button>
+<ul>
+    <li *ngFor="let personaje of personajes; let i = index">
+       {{i + 1}} - {{personaje}}
+    </li>
+</ul>
